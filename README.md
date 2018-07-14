@@ -1,2 +1,3 @@
-# hyperdeck_scripts
+# Hyperdeck Scripts
+
 Scripts that control Blackmagic Hyperdeck
