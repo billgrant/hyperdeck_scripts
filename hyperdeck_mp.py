@@ -2,6 +2,7 @@
 
 from telnetlib import Telnet
 import sys
+from multiprocessing import Process
 
 TCP_PORT = 9993
 
@@ -19,14 +20,38 @@ hyperdecks = {
 }
 
 def record_start():
+     p1 = Process(target = record_start_mp(hyperdecks['Hyperdeck1']))
+     p2 = Process(target = record_start_mp(hyperdecks['Hyperdeck2']))
+     p3 = Process(target = record_start_mp(hyperdecks['Hyperdeck3']))
+     p4 = Process(target = record_start_mp(hyperdecks['Hyperdeck4']))
+     p5 = Process(target = record_start_mp(hyperdecks['Hyperdeck5']))
+     p6 = Process(target = record_start_mp(hyperdecks['Hyperdeck6']))
+     p7 = Process(target = record_start_mp(hyperdecks['Hyperdeck7']))
+     p8 = Process(target = record_start_mp(hyperdecks['Hyperdeck8']))
+     p9 = Process(target = record_start_mp(hyperdecks['Hyperdeck9']))
+     p1.start()
+     p2.start()
+     p3.start()
+     p4.start()
+     p5.start()
+     p6.start()
+     p7.start()     
+     p8.start()
+     p9.start()
+
+
+
+
+
+def record_start_mp(ipaddress):
     """Telnet to the decks and start recording"""
     status = ""
-    for deckname, ipaddress in hyperdecks.items():
-        tn = Telnet(ipaddress, TCP_PORT)
-        tn.write(b'record' + b'\r\n')
-        tn.write(b'quit' + b'\r\n')
-        status += tn.read_all().decode('ascii')
-        print(status)
+    #for deckname, ipaddress in hyperdecks.items():
+    tn = Telnet(ipaddress, TCP_PORT)
+    tn.write(b'record' + b'\r\n')
+    tn.write(b'quit' + b'\r\n')
+    status += tn.read_all().decode('ascii')
+    print(status)
 
 def record_stop():
     """Telnet to the decks and stop recording"""
@@ -58,8 +83,3 @@ elif "remote_enable" in sys.argv[1:]:
     remote_enable()
 else:
     print("Please use record_start,record_stop, or remote_enable")
-
-
-
-    
-
