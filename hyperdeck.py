@@ -7,15 +7,15 @@ TCP_PORT = 9993
 
 # Dictonary containing the hyperdecks
 hyperdecks = {
-    "Hyperdeck1" : "10.5.241.44",
-    "Hyperdeck2" : "10.5.241.45",
-    "Hyperdeck3" : "10.5.241.46",
-    "Hyperdeck4" : "10.5.241.47",
-    "Hyperdeck5" : "10.5.241.48",
-    "Hyperdeck6" : "10.5.241.49",
-    "Hyperdeck7" : "10.5.241.50",
-    "Hyperdeck8" : "10.5.241.51",
-    "Hyperdeck9" : "10.5.241.52",
+    "Hyperdeck1" : "10.1.1.1",
+    "Hyperdeck2" : "10.1.1.2",
+    "Hyperdeck3" : "10.1.1.3",
+    "Hyperdeck4" : "10.1.1.4",
+    "Hyperdeck5" : "10.1.1.5",
+    "Hyperdeck6" : "10.1.1.6",
+    "Hyperdeck7" : "10.1.1.7",
+    "Hyperdeck8" : "10.1.1.8",
+    "Hyperdeck9" : "10.1.1.9",
 }
 
 def record_start():
